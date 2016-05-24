@@ -1,4 +1,10 @@
 import heapq
+
+def arraySum(A, start, end):
+    sum = 0
+    for i in range(start, end):
+        sum += A[i]
+    return sum
 class GerrymanderEasy:
     '''
     def getmax(self, A, B, K):
@@ -16,15 +22,15 @@ class GerrymanderEasy:
         return sum / len(C)
     '''
     def getmax(self, A, B, K):
-        start = (B[0]+B[1])/(A[0]+A[1])
-        all = (B[0]+B[1])/(A[0]+A[1])
-        div = (A[0]+A[1])
-        for i in range(2, len(A)):
-            c = (B[i-1]+B[i])/(A[i-1]+A[i])
+        div = arraySum(A, 0, K)
+        start = arraySum(B, 0, K)/ div
+        all = start
+        for i in range(K, len(A)):
+            c = arraySum(B, i+1-K, i+1) / arraySum(A, i+1-K, i+1)
             newStart = (start*div+B[i])/(div+A[i])
             if (c > newStart):
                 start = c
-                div = (A[i-1]/A[i])
+                div = arraySum(A, i+1-K, i+1)
             else:
                 start = newStart
                 div = div + A[i]
