@@ -1,0 +1,5 @@
+["top", "coder", "TOPCODER", "TOPC0DER"]	"Similar handles found"
+["Topcoder", "topcoder", "t0pcoder", "topcOder"]	"Similar handles not found"
+["same", "same", "same", "different"]	"Similar handles found"
+["0123", "0I23", "0l23", "O123", "OI23", "Ol23"]	"Similar handles found"
+["i23", "123", "456", "789", "000", "o", "O"]	"Similar handles not found"
