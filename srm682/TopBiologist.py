@@ -1,33 +1,17 @@
 # Used 40min
-from queue import Queue
+from collections import deque
 class TopBiologist:
     def findShortestNewSequence(self, sequence):
-        q = Queue()
+        DNA = "ACGT"
+        q = deque()
         while True:
             prev = ["", sequence]
-            if not q.empty():
-                prev = q.get()
-            target = prev[0] + "A"
-            pos = prev[1].find(target)
-            if pos == -1:
-                return target
-            else:
-                q.put([target, sequence[pos:]])
-            target = prev[0] + "C"
-            pos = prev[1].find(target)
-            if pos == -1:
-                return target
-            else:
-                q.put([target, sequence[pos:]])
-            target = prev[0] + "G"
-            pos = prev[1].find(target)
-            if pos == -1:
-                return target
-            else:
-                q.put([target, sequence[pos:]])
-            target = prev[0] + "T"
-            pos = prev[1].find(target)
-            if pos == -1:
-                return target
-            else:
-                q.put([target, sequence[pos:]])
+            if len(q) > 0:
+                prev = q.popleft()
+            for item in DNA:
+                target = prev[0] + item
+                pos = prev[1].find(target)
+                if pos == -1:
+                    return target
+                else:
+                    q.append([target, sequence[pos:]])
