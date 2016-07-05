@@ -25,5 +25,11 @@ class PalindromePrime:
                 if palindrome == True:
                     c += 1
         return c
+'''
+# one line solution
+class PalindromPrime():
+        def count(self, L, R):
+                    return sum(str(x) == str(x)[::-1] and not any (x % i == 0 for i in range(2, x)) for x in range(L, R+1))
+'''
 
 
