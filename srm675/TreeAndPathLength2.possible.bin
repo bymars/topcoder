@@ -1,0 +1,6 @@
+4,3	"Possible"
+4,2	"Possible"
+3,2	"Impossible"
+5,4	"Possible"
+50,999	"Impossible"
+50,1000	"Possible"
