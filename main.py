@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 import importlib
 if __name__ == '__main__':
@@ -29,6 +30,6 @@ if __name__ == '__main__':
         print("input:" + input + "\toutput:" + str(real_output))
 
         if real_output == output:
-            print("\t\033[0;32;mPass\033[0m")
+            print("\t\033[0;32mPass\033[0m")
         else:
-            print("\t\033[0;31;mFail\033[0m\texpected:" + str(output))
+            print("\t\033[0;31mFail\033[0m\texpected:" + str(output))
